@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const body = document.querySelector("body")
+
+        const div = document.createElement("div")
+
+        const paragraph = document.createElement("p")
+
+        const con = document.createTextNode("nowy tekst")
+
+        body.appendChild(div)
+        div.appendChild(paragraph)
+
+        // Styl diva
+        div.style.width = "300px"
+        div.style.height = "300px"
+        div.style.border = "1px solid black"
+        div.style.textAlign = "center"
+        div.style.backgroundColor = "red"
+
+        // Treść paragrafu w divie
+        document.querySelector("p").innerHTML = "idk"
+
+        // Zmiana koloru diva na zielony
+        let button = document.createElement("button");
+        body.appendChild(button);
+        button.textContent = "przycisk";
+        button.addEventListener("click", () => {div.style.backgroundColor = "green"})
+        
+        // Zmiana koloru diva na czerwony
+        let button2 = document.createElement("button");
+        body.appendChild(button2);
+        button2.textContent = "przycisk2";
+        button2.addEventListener("click", () => {div.style.backgroundColor = "red"})
+
+        // Chowanie diva 
+        let button3 = document.createElement("button");
+        body.appendChild(button3);
+        button3.textContent = "przycisk3";
+        button3.addEventListener("click", () => {div.style.visibility = "hidden"})
+
+        
+        // Input
+        let inpucik = document.createElement("input")
+        body.appendChild(inpucik);
+        inpucik.id = "inp1";
+        inpucik.placeholder = "input1"
+
+        // Zapisywanie w paragrafie contentu z inputa
+        let button4 = document.createElement("button");
+        body.appendChild(button4);
+        button4.textContent = "przycisk4";
+        button4.addEventListener("click", () => {
+            document.getElementById("paragraph2").innerHTML = document.getElementById("inp1").value
+        })
+
+        const paragraph2 = document.createElement("p")
+        body.appendChild(paragraph2);
+        paragraph2.id = "paragraph2"
+
+        // Input 2
+        let inpucik2 = document.createElement("input")
+        body.appendChild(inpucik2);
+        inpucik2.id = "inp2";
+        inpucik2.placeholder = "Wpisz nazwę domeny"
+
+        // Przechodzenie na strone
+        let button5 = document.createElement("button");
+        body.appendChild(button5);
+        button5.textContent = "przycisk5";
+        button5.addEventListener("click", () => {   
+            let url = document.getElementById('inp2').value; 
+            window.open(`https://${url}`, '_blank');
+        })
+    </script>
+</body>
+</html>
